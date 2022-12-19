@@ -27,3 +27,8 @@
   display: flex;
   gap: 2rem;
 }
+
+#footer a:hover {
+  color: red;
+  transition: 0.5s;
+}
