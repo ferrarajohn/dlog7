@@ -3,6 +3,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 2rem;
   margin: 1rem 1.5rem;
+  padding-top: 1rem;
 }
 
 .ex-img-wrap {
