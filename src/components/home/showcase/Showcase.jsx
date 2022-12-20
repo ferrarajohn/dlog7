@@ -11,85 +11,85 @@ const Showcase = () => {
             <div class="slider">
 	<div class="slide-track">
 		<div class="slide">
-       <a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a> 
+       <a href="https://delorean.markets/market"><img src="Images/1.png" height="150" width="240" alt="" /></a> 
        <div class="carr-title">Degen Toonz</div>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Bulls&Apes</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Fluf Project</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">MA YC Project</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Mob Ties</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Party Bear</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Lazy Lions</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/8.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Prime Apes</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Cyber Brokers</p>
 
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/1.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Inhabitas</p>
 
         
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Killa Bears</p>
 
         
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">ToyMories</p>
 
         
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Buzzies</p>
 
         
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market)"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">CryptoMories</p>
 
         
@@ -101,86 +101,86 @@ const Showcase = () => {
 <div class="slider2">
 	<div class="slide-track2">
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Degen Toonz</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Bulls&Apes</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/8.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Fluf Project</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">MA YC Project</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/1.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Mob Ties</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Party Bear</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Lazy Lions</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Prime Apes</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Cyber Brokers</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Inhabitas</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Killa Bears</p>
 
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/8.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">ToyMories</p>
 
         
 		</div>
 		<div class="slide2">
         
-        <a href="https://delorean.markets/market)"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
         <p class="carr-title">Buzzies</p>
         
 		</div>
 		<div class="slide2">
         
-        <a href="https://delorean.markets/market)"><img src="Images/1.jpg" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/1.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">CryptoMories</p>
         
 		</div>
@@ -201,7 +201,9 @@ const Showcase = () => {
             <div className="first-item">
                 <div className="item1">
                 
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, laborum.Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, laborum.</p>
+                    <p>How to link an item:{"\n"}
+Navigate to the Link page, upload an image of your item into the box on the left, enter other information in the other box, and press "Link item!" It may take a few minutes for your item to finish linking.
+		</p>
                     
                 </div>
                 <div className="item2">
