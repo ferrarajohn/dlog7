@@ -64,14 +64,14 @@ const Profile = (props) => {
 
   return (
     <div>
-      <div className='sm-title mg2'>Publicly Listed Items</div>
+      <div className='sm-title mg2'>Publicly listed</div>
         <div>
           <ListedItems 
           getItems={getItems}
           mrktContract={mrktContract}/>
         </div>
       <div>
-      <div className='sm-title mg2'>Invite Only Items</div>
+      <div className='sm-title mg2'>Invite only</div>
         <div>
           <InviteOnly
             nftContract={nftContract}
