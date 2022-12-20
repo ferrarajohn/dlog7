@@ -84,7 +84,7 @@ const InviteOnly = ({mrktContract, nftContract}) => {
                     ))
                 :
                 <div>
-                    No items to display. Link your first item now.
+                    No items to display. To see any results here, you need to link an item and list it by enabling the "invite" feature.
                 </div>
             }
         </div>
