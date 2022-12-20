@@ -100,9 +100,6 @@ const OwnedItems = ({ownedTokens, mrktContract, nftContract, account}) => {
                                     <div><strong>{item.name}</strong></div>
                                     <div>{item.description}</div>
                                 </div>
-                                <div>
-                                    <div>NFT ID: #{Number(item.tokenId)}</div>
-                                </div>
                             </div>
                             <div>
                                 <div className='listprice-input-wrap'>
@@ -111,7 +108,7 @@ const OwnedItems = ({ownedTokens, mrktContract, nftContract, account}) => {
                                             <input type="checkbox" onChange={toggleCheckbox}/>
                                         </div>
                                         <div>
-                                            Enable Invite Only
+                                            Invite Only
                                         </div>
                                     </div>
                                     {
@@ -128,7 +125,7 @@ const OwnedItems = ({ownedTokens, mrktContract, nftContract, account}) => {
                                 {
                                     isListed && Number(item.tokenId) === currentID?
                                     <div>
-                                        <button className='explore-buy-btn' disabled>NFT Listed!</button>
+                                        <button className='explore-buy-btn' disabled>Item listed!</button>
                                     </div>
                                     : isListing && Number(item.tokenId) === currentID?
                                     <div>
@@ -140,15 +137,15 @@ const OwnedItems = ({ownedTokens, mrktContract, nftContract, account}) => {
                                     </div>
                                     : isApproving?
                                     <div>
-                                        <button className='explore-buy-btn' disabled>Approving...</button>
+                                        <button className='explore-buy-btn' disabled>Initializing...</button>
                                     </div>
                                     : approved ?
                                     <div>
-                                        <button className='explore-buy-btn' onClick={(e) => listNFT(e,Number(item.tokenId))}>List NFT</button>
+                                        <button className='explore-buy-btn' onClick={(e) => listNFT(e,Number(item.tokenId))}>List item</button>
                                     </div>
                                     :
                                     <div>
-                                        <button className='explore-buy-btn' onClick={(e) => approveMarket()}>Approve</button>
+                                        <button className='explore-buy-btn' onClick={(e) => approveMarket()}>Get started</button>
                                     </div>
                                 }
                             </div>
@@ -157,7 +154,7 @@ const OwnedItems = ({ownedTokens, mrktContract, nftContract, account}) => {
                     ))
                     :
                     <div>
-                        No NFTs to display
+                        No items to display. To see a result here, link an item.
                     </div>
                 }
 
