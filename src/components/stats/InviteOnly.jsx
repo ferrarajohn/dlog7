@@ -52,15 +52,14 @@ const InviteOnly = ({mrktContract, nftContract}) => {
                                         </div>
                                     </div>
                                     <div>
-                                        <div>Token ID: # {Number(item.tokenID)}</div>
-                                        <div>Item: # {Number(item.itemID)}</div>
+                                        <div>Item ID: # {Number(item.itemID)}</div>
                                     </div>
                                     
                                 </div>
                                 <div className='whitelist-info pd1'>
                                     <div className='whitelist-account-wrap'>
                                         <div>
-                                        <strong>Whitelisted Account</strong> 
+                                        <strong>Invited Account</strong> 
                                         </div>
                                         <div>
                                             {item.whitelistAddress}
@@ -77,7 +76,7 @@ const InviteOnly = ({mrktContract, nftContract}) => {
                                 </div>
                                 <div>
                                     <button className="explore-buy-btn" onClick={(e) => deListNFT(item.itemID)}>
-                                        DeList
+                                        Delist
                                     </button>
                                 </div>
                             </div>
@@ -85,7 +84,7 @@ const InviteOnly = ({mrktContract, nftContract}) => {
                     ))
                 :
                 <div>
-                    No NFTs to display
+                    No items to display. Link your first item now.
                 </div>
             }
         </div>
