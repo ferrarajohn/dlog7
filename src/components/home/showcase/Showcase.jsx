@@ -201,9 +201,9 @@ const Showcase = () => {
             <div className="first-item">
                 <div className="item1">
                 
-                    <p>How to link an item:{"\n"}
-Navigate to the Link page, upload an image of your item into the box on the left, enter other information in the other box, and press "Link item!" It may take a few minutes for your item to finish linking.
-		</p>
+                    <text>{'How to link an item:
+
+	    Navigate to the Link page, upload an image of your item into the box on the left, enter other information in the other box, and press "Link item!" It may take a few minutes for your item to finish linking.'}</text>
                     
                 </div>
                 <div className="item2">
