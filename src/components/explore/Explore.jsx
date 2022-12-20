@@ -109,7 +109,7 @@ const Explore = (props) => {
                     </div>
                   </div>
                   <div>
-                    <div>ID: #{Number(item.itemId)}</div>
+                    <div>Item ID: #{Number(item.itemId)}</div>
                   </div>
                 </div>
                 <div>
@@ -129,7 +129,7 @@ const Explore = (props) => {
           ))}
         </div>
       ) : (
-        <div>No NFTs to display</div>
+        <div>No items to display. Please link your MetaMask account to view the Market.</div>
       )}
     </div>
   );
