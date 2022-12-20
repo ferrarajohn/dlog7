@@ -39,7 +39,7 @@ const ListedItems = ({getItems, mrktContract}) => {
                 ))
             :
             <div>
-                No items to display. Either link an item or list a privately-owned item to see a result here.
+                No items to display. To see a result here, you need to link an item and list it.
             </div>
             }
         </div>
