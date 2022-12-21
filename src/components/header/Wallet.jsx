@@ -57,7 +57,7 @@ const Wallet = (props) => {
             :
             <div className='wallet-connect-wrap'>
                 <div>
-                Connect with one of our available wallet providers or create a new one.
+                Get started with Delorean Codes by linking a MetaMask wallet.
                 </div>
                 <div className='connect-wrap'>
                 <div>
