@@ -119,7 +119,7 @@ const Showcase = () => {
         
 		</div>
 		<div class="slide2">
-        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">MA YC Project</p>
 
         
@@ -174,7 +174,7 @@ const Showcase = () => {
 		</div>
 		<div class="slide2">
         
-        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">Buzzies</p>
         
 		</div>
