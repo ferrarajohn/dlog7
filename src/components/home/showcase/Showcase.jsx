@@ -59,7 +59,7 @@ const Showcase = () => {
 
 		</div>
 		<div class="slide">
-        <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
+        <a href="https://delorean.markets/market"><img src="Images/9.jpg" height="150" width="240" alt="" /></a>
         <p class="carr-title">AirPods Gen 1 (used)</p>
 
 
