@@ -12,55 +12,55 @@ const Showcase = () => {
 	<div class="slide-track">
 		<div class="slide">
        <a href="https://delorean.markets/market"><img src="Images/1.png" height="150" width="240" alt="" /></a> 
-       <div class="carr-title">Degen Toonz</div>
+       <div class="carr-title">Red Honda Accord (used)</div>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/2.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Bulls&Apes</p>
+        <p class="carr-title">Reading glasses (new)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/3.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Fluf Project</p>
+        <p class="carr-title">Harry Potter books (used)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/4.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">MA YC Project</p>
+        <p class="carr-title">Samsung Galaxy (new)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/5.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Mob Ties</p>
+        <p class="carr-title">Northface jacket (new)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/6.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Party Bear</p>
+        <p class="carr-title">Air Jordan's (used)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/7.jpg" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Lazy Lions</p>
+        <p class="carr-title">MacBook Air (lightly used)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/8.png" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Prime Apes</p>
+        <p class="carr-title">iPhone 11 (lightly used)</p>
 
 
 		</div>
 		<div class="slide">
         <a href="https://delorean.markets/market"><img src="Images/9.png" height="150" width="240" alt="" /></a>
-        <p class="carr-title">Cyber Brokers</p>
+        <p class="carr-title">AirPods Gen 1 (used)</p>
 
 
 		</div>
