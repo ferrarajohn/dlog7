@@ -55,6 +55,7 @@
 .file-upload {
   display: flex;
   flex-direction: column; /* Updated to stack items vertically */
+  text-align: center;
   align-items: center;
   justify-content: center;
   width: 30%;
