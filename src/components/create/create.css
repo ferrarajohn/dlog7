@@ -63,7 +63,7 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
-  border: dotted #cdf3f3 5px;
+  border: dashed #cdf3f3 5px;
 }
 
 .create-input-file {
