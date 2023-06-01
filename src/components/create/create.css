@@ -40,7 +40,8 @@
   align-items: center;
   padding: 1rem;
   border-radius: var(---brad);
-  background-color: var(---primary-col);
+  background-color: white;
+  border: solid black 3px;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
 }
 
@@ -61,8 +62,9 @@
   width: 30%;
   height: 21.5rem;
   border-radius: 10px;
-  background-color: var(---primary-col);
+  background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
+  border: dotted black 3px;
 }
 
 .create-input-file {
