@@ -19,7 +19,7 @@
 .create-input-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: ##32ccce;
+  background-color: #32ccce;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -32,6 +32,7 @@
   transition: 0.8s;
   background-color: white;
   color: #32ccce;
+  border: solid black 2px;
 }
 
 .create-inner-wrap {
