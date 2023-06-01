@@ -67,6 +67,8 @@
 
 .create-input-file {
   margin-top: 1rem;
+  text-align: bold;
+  font-family: Quicksand;
 }
 
 .upload-message {
