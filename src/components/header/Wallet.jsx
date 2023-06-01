@@ -46,11 +46,11 @@ const Wallet = (props) => {
             props.connected ?
             <div className='wallet-connected-wrap'>
                 <div className='balance-wrap'>
-                    <div>Total Balance</div>
+                    <div>Total Balance:</div>
                     <div>{props.balance} ETH</div>
                 </div>
                 <div className='balance-wrap'>
-                    <div>Royalties Received</div>
+                    <div>Royalties Earned:</div>
                     <div>{royalties} ETH</div>
                 </div>
             </div>
