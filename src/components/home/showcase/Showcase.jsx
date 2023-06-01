@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import cheerio from 'cheerio';
-import Slider from '../Slider';
+import Slider from '../../Slider';
 
 const Showcase = () => {
   const [nfts, setNFTs] = useState([]);
