@@ -1,31 +1,35 @@
-
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "./explore.css";
 
 const Explore = (props) => {
-  const [getItems, setItems] = useState("");
+  const [items, setItems] = useState([]);
   const [isLoading, setLoading] = useState(false);
-  const [name, setName] = useState(false);
-  const [royaltyReceiver, setRoyaltyReceiver] = useState(0);
-  const [royaltyPercent, setRoyaltyPercent] = useState(0);
+  const [name, setName] = useState("");
+  const [royaltyInfo, setRoyaltyInfo] = useState({});
+
   const mrktContract = props.marketplace;
   const nftContract = props.nft;
   const zeroAddress = "0x0000000000000000000000000000000000000000";
+
   const loadMarketplaceItems = async () => {
     setLoading(true);
+
     if (mrktContract && nftContract) {
       const n = await nftContract.name();
       setName(n);
+
       const nftID = await mrktContract.getNFTCount();
       let items = [];
+      let royaltyInfo = {};
+
       for (let i = 1; i <= Number(nftID); i++) {
         const nft = await mrktContract.IDtoItem(i);
+
         if (
           nft.itemID > 0 &&
           !nft.sold &&
-          nft.whitelistAddress == zeroAddress
+          nft.whitelistAddress === zeroAddress
         ) {
           const uri = await nftContract.tokenURI(nft.tokenID);
           const response = await fetch(uri);
@@ -35,10 +39,14 @@ const Explore = (props) => {
           );
           const rr = await nftContract.getRoyaltyReceiver(nft.tokenID);
           const rprc = await nftContract.getRoyaltyPercent(nft.tokenID);
-          if (rr != "0x0000000000000000000000000000000000000000") {
-            setRoyaltyReceiver(rr);
+
+          if (rr !== zeroAddress) {
+            royaltyInfo[nft.tokenID] = {
+              royaltyReceiver: rr,
+              royaltyPercent: rprc,
+            };
           }
-          setRoyaltyPercent(rprc);
+
           items.push({
             totalPrice,
             itemId: nft.itemID,
@@ -49,8 +57,11 @@ const Explore = (props) => {
           });
         }
       }
+
       setItems(items);
+      setRoyaltyInfo(royaltyInfo);
     }
+
     setLoading(false);
   };
 
@@ -58,6 +69,7 @@ const Explore = (props) => {
     const order = await mrktContract.purchaseItem(item.itemId, {
       value: item.totalPrice,
     });
+
     loadMarketplaceItems();
     return order;
   };
@@ -72,18 +84,19 @@ const Explore = (props) => {
 
   return (
     <div>
-      {getItems.length > 0 ? (
+      {items.length > 0 ? (
         <div className="explore-container">
-          {getItems.map((item, index) => (
+          {items.map((item, index) => (
             <div key={index} className="explore-card">
               <div className="featured-card">
-                {royaltyReceiver ? (
+                {royaltyInfo[item.itemId] ? (
                   <div className="buynow-action">
-                    {Number(royaltyPercent)}% Royalties
+                    {Number(royaltyInfo[item.itemId].royaltyPercent)}% Royalties
                   </div>
                 ) : (
                   <></>
                 )}
+
                 <div className="ex-img-wrap">
                   <img className="feat-img" src={item.image} alt="" />
                 </div>
@@ -95,13 +108,19 @@ const Explore = (props) => {
                         <strong>{item.name}</strong>
                       </div>
                       <div>{name}</div>
-                      {royaltyReceiver ? (
+                      {royaltyInfo[item.itemId] ? (
                         <div>
                           <small>
                             Royalty Receiver:{" "}
-                            {royaltyReceiver.slice(0, 2) +
+                            {royaltyInfo[item.itemId].royaltyReceiver.slice(
+                              0,
+                              2
+                            ) +
                               "..." +
-                              royaltyReceiver.slice(38, 43)}
+                              royaltyInfo[item.itemId].royaltyReceiver.slice(
+                                38,
+                                43
+                              )}
                           </small>
                         </div>
                       ) : (
@@ -113,16 +132,14 @@ const Explore = (props) => {
                     <div>Item ID: #{Number(item.itemId)}</div>
                   </div>
                 </div>
+
                 <div>
                   <button
                     className="explore-buy-btn"
                     onClick={(e) => buyMarketItem(item)}
                   >
                     Buy for{" "}
-                    {ethers.utils.formatEther(
-                      Number(item.totalPrice).toString()
-                    )}{" "}
-                    ETH
+                    {ethers.utils.formatEther(item.totalPrice.toString())} ETH
                   </button>
                 </div>
               </div>
@@ -130,10 +147,152 @@ const Explore = (props) => {
           ))}
         </div>
       ) : (
-        <div>No items to display. Please link your MetaMask account to view the Market.</div>
+        <div>
+          No items to display. Please link your MetaMask account to view the
+          Market.
+        </div>
       )}
     </div>
   );
 };
 
 export default Explore;
+
+// import React from "react";
+// import { useState, useEffect } from "react";
+// import { ethers } from "ethers";
+// import "./explore.css";
+
+// const Explore = (props) => {
+//   const [getItems, setItems] = useState("");
+//   const [isLoading, setLoading] = useState(false);
+//   const [name, setName] = useState(false);
+//   const [royaltyReceiver, setRoyaltyReceiver] = useState(0);
+//   const [royaltyPercent, setRoyaltyPercent] = useState(0);
+//   const mrktContract = props.marketplace;
+//   const nftContract = props.nft;
+//   const zeroAddress = "0x0000000000000000000000000000000000000000";
+//   const loadMarketplaceItems = async () => {
+//     setLoading(true);
+//     if (mrktContract && nftContract) {
+//       const n = await nftContract.name();
+//       setName(n);
+//       const nftID = await mrktContract.getNFTCount();
+//       let items = [];
+//       for (let i = 1; i <= Number(nftID); i++) {
+//         const nft = await mrktContract.IDtoItem(i);
+//         if (
+//           nft.itemID > 0 &&
+//           !nft.sold &&
+//           nft.whitelistAddress == zeroAddress
+//         ) {
+//           const uri = await nftContract.tokenURI(nft.tokenID);
+//           const response = await fetch(uri);
+//           const metadata = await response.json();
+//           const totalPrice = await mrktContract.getTotalPrice(
+//             Number(nft.itemID)
+//           );
+//           const rr = await nftContract.getRoyaltyReceiver(nft.tokenID);
+//           const rprc = await nftContract.getRoyaltyPercent(nft.tokenID);
+//           if (rr != "0x0000000000000000000000000000000000000000") {
+//             setRoyaltyReceiver(rr);
+//           }
+//           setRoyaltyPercent(rprc);
+//           items.push({
+//             totalPrice,
+//             itemId: nft.itemID,
+//             seller: nft.seller,
+//             name: metadata.name,
+//             description: metadata.description,
+//             image: metadata.image,
+//           });
+//         }
+//       }
+//       setItems(items);
+//     }
+//     setLoading(false);
+//   };
+
+//   const buyMarketItem = async (item) => {
+//     const order = await mrktContract.purchaseItem(item.itemId, {
+//       value: item.totalPrice,
+//     });
+//     loadMarketplaceItems();
+//     return order;
+//   };
+
+//   useEffect(() => {
+//     loadMarketplaceItems();
+//   }, [props.marketplace]);
+
+//   if (isLoading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   return (
+//     <div>
+//       {getItems.length > 0 ? (
+//         <div className="explore-container">
+//           {getItems.map((item, index) => (
+//             <div key={index} className="explore-card">
+//               <div className="featured-card">
+//                 {royaltyReceiver ? (
+//                   <div className="buynow-action">
+//                     {Number(royaltyPercent)}% Royalties
+//                   </div>
+//                 ) : (
+//                   <></>
+//                 )}
+//                 <div className="ex-img-wrap">
+//                   <img className="feat-img" src={item.image} alt="" />
+//                 </div>
+
+//                 <div className="feat-info-wrap">
+//                   <div className="pfp-info-wrap">
+//                     <div>
+//                       <div>
+//                         <strong>{item.name}</strong>
+//                       </div>
+//                       <div>{name}</div>
+//                       {royaltyReceiver ? (
+//                         <div>
+//                           <small>
+//                             Royalty Receiver:{" "}
+//                             {royaltyReceiver.slice(0, 2) +
+//                               "..." +
+//                               royaltyReceiver.slice(38, 43)}
+//                           </small>
+//                         </div>
+//                       ) : (
+//                         <></>
+//                       )}
+//                     </div>
+//                   </div>
+//                   <div>
+//                     <div>Item ID: #{Number(item.itemId)}</div>
+//                   </div>
+//                 </div>
+//                 <div>
+//                   <button
+//                     className="explore-buy-btn"
+//                     onClick={(e) => buyMarketItem(item)}
+//                   >
+//                     Buy for{" "}
+//                     {ethers.utils.formatEther(
+//                       Number(item.totalPrice).toString()
+//                     )}{" "}
+//                     ETH
+//                   </button>
+//                 </div>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       ) : (
+//         <div>No items to display. Please link your MetaMask account to view the Market.</div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default Explore;
