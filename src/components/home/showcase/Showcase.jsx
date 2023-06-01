@@ -147,6 +147,7 @@ const Showcase = () => {
           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a><p class="carr-title">Red Honda Accord (used)</p></div>
         </div>
       </div>
+      <span style="color:var(--text-sharp);font-weight:800;letter-spacing:-2.5px;--font-size:80px;--mobile-font-size:38.400000000000006px;--line-height:90px;--mobile-line-height:43.400000000000006px">The new market starts with your </span>                                         
       <div className="second-main-container">
         <div className="flex-container">
           <div className="second-main-title">
