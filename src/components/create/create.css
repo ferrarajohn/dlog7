@@ -19,7 +19,7 @@
 .create-input-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #cdf3f3;
+  background-color: #32ccce;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -28,8 +28,8 @@
 }
 
 .create-input-btn:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
+  transform: scale(1.025);
+  transition: 0.8s;
 }
 
 .create-inner-wrap {
@@ -63,7 +63,7 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
-  border: dashed #cdf3f3 5px;
+  border: dashed #32ccce 5px;
 }
 
 .create-input-file {
