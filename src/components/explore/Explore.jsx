@@ -12,58 +12,106 @@ const Explore = (props) => {
   const nftContract = props.nft;
   const zeroAddress = "0x0000000000000000000000000000000000000000";
 
-  const loadMarketplaceItems = async () => {
-    setLoading(true);
+const loadMarketplaceItems = async () => {
+  setLoading(true);
 
-    if (mrktContract && nftContract) {
-      const n = await nftContract.name();
-      setName(n);
+  if (mrktContract && nftContract) {
+    const n = await nftContract.name();
+    setName(n);
 
-      const nftID = await mrktContract.getNFTCount();
-      let items = [];
-      let royaltyInfo = {};
+    const nftID = await mrktContract.getNFTCount();
+    let items = [];
+    let royaltyInfo = {};
 
-      for (let i = 1; i <= Number(nftID); i++) {
-        const nft = await mrktContract.IDtoItem(i);
+    for (let i = 1; i <= Number(nftID); i++) {
+      const nft = await mrktContract.IDtoItem(i);
 
-        if (
-          nft.itemID > 0 &&
-          !nft.sold &&
-          nft.whitelistAddress === zeroAddress
-        ) {
-          const uri = await nftContract.tokenURI(nft.tokenID);
-          const response = await fetch(uri);
-          const metadata = await response.json();
-          const totalPrice = await mrktContract.getTotalPrice(
-            Number(nft.itemID)
-          );
-          const rr = await nftContract.getRoyaltyReceiver(nft.tokenID);
-          const rprc = await nftContract.getRoyaltyPercent(nft.tokenID);
+      if (nft.itemID > 0 && !nft.sold && nft.whitelistAddress === zeroAddress) {
+        const uri = await nftContract.tokenURI(nft.tokenID);
+        const response = await fetch(uri);
+        const metadata = await response.json();
+        const totalPrice = await mrktContract.getTotalPrice(Number(nft.itemID));
+        const rr = await nftContract.getRoyaltyReceiver(nft.tokenID);
+        const rprc = await nftContract.getRoyaltyPercent(nft.tokenID);
 
-          if (rr !== zeroAddress) {
-            royaltyInfo[nft.tokenID] = {
-              royaltyReceiver: rr,
-              royaltyPercent: rprc,
-            };
-          }
-
-          items.push({
-            totalPrice,
-            itemId: nft.itemID,
-            seller: nft.seller,
-            name: metadata.name,
-            description: metadata.description,
-            image: metadata.image,
-          });
+        if (rr !== zeroAddress) {
+          royaltyInfo[nft.tokenID] = {
+            royaltyReceiver: rr,
+            royaltyPercent: rprc,
+          };
         }
-      }
 
-      setItems(items);
-      setRoyaltyInfo(royaltyInfo);
+        items.push({
+          totalPrice,
+          itemId: nft.itemID,
+          seller: nft.seller,
+          name: metadata.name,
+          description: metadata.description,
+          image: metadata.image,
+          royaltyPercent: rprc, // Store royalty percent for each item
+        });
+      }
     }
 
-    setLoading(false);
-  };
+    setItems(items);
+    setRoyaltyInfo(royaltyInfo);
+  }
+
+  setLoading(false);
+};
+  
+//   const loadMarketplaceItems = async () => {
+//     setLoading(true);
+
+//     if (mrktContract && nftContract) {
+//       const n = await nftContract.name();
+//       setName(n);
+
+//       const nftID = await mrktContract.getNFTCount();
+//       let items = [];
+//       let royaltyInfo = {};
+
+//       for (let i = 1; i <= Number(nftID); i++) {
+//         const nft = await mrktContract.IDtoItem(i);
+
+//         if (
+//           nft.itemID > 0 &&
+//           !nft.sold &&
+//           nft.whitelistAddress === zeroAddress
+//         ) {
+//           const uri = await nftContract.tokenURI(nft.tokenID);
+//           const response = await fetch(uri);
+//           const metadata = await response.json();
+//           const totalPrice = await mrktContract.getTotalPrice(
+//             Number(nft.itemID)
+//           );
+//           const rr = await nftContract.getRoyaltyReceiver(nft.tokenID);
+//           const rprc = await nftContract.getRoyaltyPercent(nft.tokenID);
+
+//           if (rr !== zeroAddress) {
+//             royaltyInfo[nft.tokenID] = {
+//               royaltyReceiver: rr,
+//               royaltyPercent: rprc,
+//             };
+//           }
+
+//           items.push({
+//             totalPrice,
+//             itemId: nft.itemID,
+//             seller: nft.seller,
+//             name: metadata.name,
+//             description: metadata.description,
+//             image: metadata.image,
+//           });
+//         }
+//       }
+
+//       setItems(items);
+//       setRoyaltyInfo(royaltyInfo);
+//     }
+
+//     setLoading(false);
+//   };
 
   const buyMarketItem = async (item) => {
     const order = await mrktContract.purchaseItem(item.itemId, {
