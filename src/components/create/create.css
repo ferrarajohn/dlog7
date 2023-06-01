@@ -53,6 +53,10 @@
 }
 
 .file-upload {
+  display: flex;
+  flex-direction: column; /* Updated to stack items vertically */
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 30%;
   height: 21.5rem;
@@ -60,7 +64,7 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
-  border: dashed #32ccce 5px;
+  border: dashed #32ccce 2px;
 }
 
 .image-preview {
