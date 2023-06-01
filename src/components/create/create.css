@@ -19,7 +19,7 @@
 .create-input-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #d74945;
+  background-color: #32ccce;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -41,7 +41,6 @@
   padding: 1rem;
   border-radius: var(---brad);
   background-color: white;
-  border: solid black 3px;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
 }
 
@@ -64,7 +63,7 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
-  border: dotted black 3px;
+  border: dotted #32ccce 10px;
 }
 
 .create-input-file {
