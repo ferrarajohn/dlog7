@@ -127,6 +127,7 @@ const Create = (props) => {
               <div className="upload-message">
                 {isDragOver ? "Drop the image here" : "Drag and drop image here"}
               </div>
+              <div className="or-file">OR</div>
               <input
                 className="create-input-file"
                 type="file"
@@ -165,17 +166,17 @@ const Create = (props) => {
             </div>
             <div>
               <button className="create-input-btn" onClick={createNFT}>
-                Create Item
+                Create item
               </button>
             </div>
           </div>
         ) : isConfirming && !isMinted ? (
           <div className="create-inner-wrap">
-            <div>Confirming Transaction...</div>
+            <div>Confirming transaction...</div>
           </div>
         ) : !isConfirming && isMinted ? (
           <div className="create-inner-wrap">
-            <div>NFT Minted!</div>
+            <div>Item minted!</div>
           </div>
         ) : (
           <div className="create-inner-wrap">
