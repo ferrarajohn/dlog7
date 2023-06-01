@@ -125,7 +125,7 @@ const Create = (props) => {
           ) : (
             <div className="upload-container">
               <div className="upload-message">
-                {isDragOver ? "Drop the image here" : "Drag and drop image here"}
+                {isDragOver ? "Drop the item here!" : "Drag and drop an image of your item"}
               </div>
               <div className="or-file">OR</div>
               <input
