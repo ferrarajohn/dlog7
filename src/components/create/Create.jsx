@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { create as IPFSHTTPClient } from "ipfs-http-client";
-import "./create.css";
 import { Buffer } from "safe-buffer";
 import { ethers } from "ethers";
 import NFTABI from "../../contractData/DeloreanOriginals.json";
+import "./create.css";
 
 const client = IPFSHTTPClient({
   host: "infura-ipfs.io",
@@ -26,19 +26,18 @@ const Create = (props) => {
   const [royaltyPrc, setRoyaltyPrc] = useState("");
   const [isMinted, setIsMinted] = useState(false);
   const [isConfirming, setIsConfirming] = useState(false);
-  const [isDragOver, setIsDragOver] = useState(false);
   const mrktContract = props.marketplace;
 
-  const uploadtoIPFS = async (file) => {
+  const uploadToIPFS = async (files) => {
+    const file = files[0];
     if (file) {
       try {
         const result = await client.add(file);
         console.log(result);
-        console.log(`https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`);
-        setImage({
-          url: `https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`,
-          file: file,
-        });
+        console.log(
+          `https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`
+        );
+        setImage(`https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`);
       } catch (err) {
         console.log("IPFS image upload error", err);
       }
@@ -75,7 +74,7 @@ const Create = (props) => {
       return;
     }
     try {
-      const data = JSON.stringify({ image: image.url, name, description });
+      const data = JSON.stringify({ image, name, description });
       const result = await client.add(data);
       console.log("Metadata added to IPFS");
       mint(result);
@@ -84,54 +83,32 @@ const Create = (props) => {
     }
   };
 
-  const handleDragEnter = (e) => {
+  const handleDrop = (e) => {
     e.preventDefault();
-    setIsDragOver(true);
+    const files = Array.from(e.dataTransfer.files);
+    uploadToIPFS(files);
   };
 
   const handleDragOver = (e) => {
     e.preventDefault();
-    setIsDragOver(true);
-  };
-
-  const handleDragLeave = (e) => {
-    e.preventDefault();
-    setIsDragOver(false);
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    setIsDragOver(false);
-    const file = e.dataTransfer.files[0];
-    uploadtoIPFS(file);
   };
 
   return (
     <div>
       <div className="sec-title mg2">LINK YOUR ITEM</div>
-      <div
-        className={`create-nft-wrap ${isDragOver ? "drag-over" : ""}`}
-        onDragEnter={handleDragEnter}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
-      >
-        <div className="file-upload">
+      <div className="create-nft-wrap">
+        <div
+          className="file-upload"
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+        >
           {image ? (
             <div className="image-preview">
-              <img src={URL.createObjectURL(image.file)} alt="Preview" />
+              <img src={URL.createObjectURL(image)} alt="Preview" />
             </div>
           ) : (
-            <div className="upload-message">
-              {isDragOver ? "Drop the image here" : "Drag and drop image here"}
-            </div>
+            <div className="upload-message">Drag and drop image here</div>
           )}
-          <input
-            className="create-input-file"
-            type="file"
-            name="file"
-            onChange={(e) => uploadtoIPFS(e.target.files[0])}
-          />
         </div>
         {!isConfirming && !isMinted ? (
           <div className="create-inner-wrap">
@@ -186,7 +163,6 @@ const Create = (props) => {
 
 export default Create;
 
-
 // import React, { useState } from "react";
 // import { create as IPFSHTTPClient } from "ipfs-http-client";
 // import "./create.css";
@@ -208,7 +184,7 @@ export default Create;
 // });
 
 // const Create = (props) => {
-//   const [image, setImage] = useState("");
+//   const [image, setImage] = useState(null);
 //   const [price, setPrice] = useState("");
 //   const [name, setName] = useState("");
 //   const [description, setDescription] = useState("");
@@ -224,7 +200,10 @@ export default Create;
 //         const result = await client.add(file);
 //         console.log(result);
 //         console.log(`https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`);
-//         setImage(`https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`);
+//         setImage({
+//           url: `https://deloreanmarkets.infura-ipfs.io/ipfs/${result.path}`,
+//           file: file,
+//         });
 //       } catch (err) {
 //         console.log("IPFS image upload error", err);
 //       }
@@ -261,7 +240,7 @@ export default Create;
 //       return;
 //     }
 //     try {
-//       const data = JSON.stringify({ image, name, description });
+//       const data = JSON.stringify({ image: image.url, name, description });
 //       const result = await client.add(data);
 //       console.log("Metadata added to IPFS");
 //       mint(result);
@@ -303,15 +282,21 @@ export default Create;
 //         onDrop={handleDrop}
 //       >
 //         <div className="file-upload">
+//           {image ? (
+//             <div className="image-preview">
+//               <img src={URL.createObjectURL(image.file)} alt="Preview" />
+//             </div>
+//           ) : (
+//             <div className="upload-message">
+//               {isDragOver ? "Drop the image here" : "Drag and drop image here"}
+//             </div>
+//           )}
 //           <input
 //             className="create-input-file"
 //             type="file"
 //             name="file"
 //             onChange={(e) => uploadtoIPFS(e.target.files[0])}
 //           />
-//           <div className="upload-message">
-//             {isDragOver ? "Drop the image here" : "Drag and drop image here"}
-//           </div>
 //         </div>
 //         {!isConfirming && !isMinted ? (
 //           <div className="create-inner-wrap">
