@@ -123,16 +123,18 @@ const Create = (props) => {
               <img src={URL.createObjectURL(image.file)} alt="Preview" />
             </div>
           ) : (
-            <div className="upload-message">
-              {isDragOver ? "Drop the image here" : "Drag and drop image here"}
-            </div>
-          )}
-          <input
-            className="create-input-file"
-            type="file"
-            name="file"
-            onChange={(e) => uploadtoIPFS(e.target.files[0])}
-          />
+            <>
+              <div className="upload-message">
+                {isDragOver ? "Drop the image here" : "Drag and drop image here"}
+              </div>
+              <input
+                className="create-input-file"
+                type="file"
+                name="file"
+                onChange={(e) => uploadtoIPFS(e.target.files[0])}
+              />
+            </>
+           )}
         </div>
         {!isConfirming && !isMinted ? (
           <div className="create-inner-wrap">
