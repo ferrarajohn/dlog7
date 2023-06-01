@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
         </div>
       </div>
-      <div>Delorean Codes &#169; 2022</div>
+      <div>Delorean Codes &#169; 2023</div>
       <div className="third-footer-part">
       <div>
           <a href="/contact">Contact Us</a>
