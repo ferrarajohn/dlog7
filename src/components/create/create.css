@@ -19,7 +19,7 @@
 .create-input-btn {
   width: 100%;
   padding: 0.75rem;
-  background-color: #32ccce;
+  background-color: #cdf3f3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -63,7 +63,7 @@
   border-radius: 10px;
   background-color: white;
   box-shadow: -20px 20px 60px #a1a1a1, 20px -20px 60px #ffffff;
-  border: dotted #32ccce 10px;
+  border: dotted #cdf3f3 5px;
 }
 
 .create-input-file {
