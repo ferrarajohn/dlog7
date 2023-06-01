@@ -160,7 +160,7 @@ const Showcase = () => {
   const fetchNFTs = async () => {
     try {
       // Fetch and extract NFT data
-      const response = await axios.get('https://delorean.markets/explore');
+      const response = await axios.get('https://delorean.markets/market');
       const html = response.data;
       const $ = cheerio.load(html);
 
