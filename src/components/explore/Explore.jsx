@@ -117,9 +117,12 @@ const Explore = (props) => {
                   <button
                     className="explore-buy-btn"
                     onClick={(e) => buyMarketItem(item)}
-                    disabled={processingItemId === item.itemId}
                   >
-                    {processingItemId === item.itemId ? "Processing..." : `Buy for ${ethers.utils.formatEther(Number(item.totalPrice).toString())} ETH`}
+                    Buy for{" "}
+                    {ethers.utils.formatEther(
+                      Number(item.totalPrice).toString()
+                    )}{" "}
+                    ETH
                   </button>
                 </div>
               </div>
