@@ -1,152 +1,200 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import "./showcase.css"
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+// import "./showcase.css"
+
+// const Showcase = () => {
+//   return (
+//     <div className="showcase">
+//       <div className="slider">
+//         <div className="slide-track">
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/1.png" height="150" width="240" alt="" />
+//             </a>
+//             <div className="carr-title">Red Honda Accord (used)</div>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/2.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Reading glasses (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/3.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Harry Potter books (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/4.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Samsung Galaxy (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/5.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Northface jacket (lightly used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/6.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Air Jordan's (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/7.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">MacBook Air (lightly used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/8.png" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">iPhone 11 (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/9.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">AirPods Gen 1 (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/1.png" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Red Honda Accord (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/2.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Reading glasses (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/3.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Harry Potter books (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/4.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Samsung Galaxy (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/5.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Northface jacket (lightly used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/6.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Air Jordan's (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/7.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">MacBook Air (lightly used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/8.png" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">iPhone 11 (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/9.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">AirPods Gen 1 (new)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/1.png" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Red Honda Accord (used)</p>
+//           </div>
+//           <div className="slide">
+//             <a href="https://delorean.markets/market">
+//               <img src="Images/2.jpg" height="150" width="240" alt="" />
+//             </a>
+//             <p className="carr-title">Reading glasses (new)</p>
+//           </div>
+//         </div>
+//       </div>
+//       <div class="slider2">
+//         <div class="slide-track2">
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Air Jordan's (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a><p class="carr-title">MacBook Air (lightly used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a><p class="carr-title">iPhone 11 (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/9.jpg" height="150" width="240" alt="" /></a><p class="carr-title">AirPods Gen 1 (new)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a><p class="carr-title">Red Honda Accord (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/2.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Reading glasses (new)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/3.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Harry Potter books (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/4.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Samsung Galaxy (new)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/5.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Northface jacket (lightly used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Air Jordan's (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a><p class="carr-title">MacBook Air (lightly used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a><p class="carr-title">iPhone 11 (used)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/9.jpg" height="150" width="240" alt="" /></a><p class="carr-title">AirPods Gen 1 (new)</p></div>
+//           <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a><p class="carr-title">Red Honda Accord (used)</p></div>
+//         </div>
+//       </div>
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import cheerio from 'cheerio';
+import Slider from './Slider';
 
 const Showcase = () => {
+  const [nfts, setNFTs] = useState([]);
+  const [recentNFTs, setRecentNFTs] = useState([]);
+
+  const fetchNFTs = async () => {
+    try {
+      // Fetch and extract NFT data
+      const response = await axios.get('https://delorean.markets/explore');
+      const html = response.data;
+      const $ = cheerio.load(html);
+
+      const nftData = $('.nft-card').map((_, element) => {
+        const imgSrc = $(element).find('.nft-card-image').attr('src');
+        const title = $(element).find('.nft-card-title').text().trim();
+        const itemLink = $(element).find('.nft-card-link').attr('href');
+        return { imgSrc, title, itemLink };
+      }).get();
+
+      // Update the state with the extracted data
+      setNFTs(nftData);
+
+      // Update the recentNFTs state in the homepage component
+      if (nftData.length > 0) {
+        setRecentNFTs(nftData);
+      }
+    } catch (error) {
+      console.error('Error fetching NFTs:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchNFTs();
+    const interval = setInterval(fetchNFTs, 60000); // Fetch every 1 minute
+
+    return () => {
+      clearInterval(interval); // Clean up the interval on component unmount
+    };
+  }, []);
+
   return (
-    <div className="showcase">
-      <div className="slider">
-        <div className="slide-track">
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/1.png" height="150" width="240" alt="" />
-            </a>
-            <div className="carr-title">Red Honda Accord (used)</div>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/2.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Reading glasses (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/3.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Harry Potter books (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/4.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Samsung Galaxy (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/5.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Northface jacket (lightly used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/6.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Air Jordan's (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/7.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">MacBook Air (lightly used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/8.png" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">iPhone 11 (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/9.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">AirPods Gen 1 (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/1.png" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Red Honda Accord (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/2.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Reading glasses (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/3.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Harry Potter books (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/4.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Samsung Galaxy (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/5.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Northface jacket (lightly used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/6.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Air Jordan's (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/7.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">MacBook Air (lightly used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/8.png" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">iPhone 11 (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/9.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">AirPods Gen 1 (new)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/1.png" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Red Honda Accord (used)</p>
-          </div>
-          <div className="slide">
-            <a href="https://delorean.markets/market">
-              <img src="Images/2.jpg" height="150" width="240" alt="" />
-            </a>
-            <p className="carr-title">Reading glasses (new)</p>
-          </div>
-        </div>
-      </div>
-      <div class="slider2">
-        <div class="slide-track2">
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Air Jordan's (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a><p class="carr-title">MacBook Air (lightly used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a><p class="carr-title">iPhone 11 (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/9.jpg" height="150" width="240" alt="" /></a><p class="carr-title">AirPods Gen 1 (new)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a><p class="carr-title">Red Honda Accord (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/2.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Reading glasses (new)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/3.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Harry Potter books (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/4.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Samsung Galaxy (new)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/5.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Northface jacket (lightly used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/6.jpg" height="150" width="240" alt="" /></a><p class="carr-title">Air Jordan's (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/7.jpg" height="150" width="240" alt="" /></a><p class="carr-title">MacBook Air (lightly used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/8.png" height="150" width="240" alt="" /></a><p class="carr-title">iPhone 11 (used)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/9.jpg" height="150" width="240" alt="" /></a><p class="carr-title">AirPods Gen 1 (new)</p></div>
-          <div class="slide2"><a href="https://delorean.markets/market)"><img src="Images/1.png" height="150" width="240" alt="" /></a><p class="carr-title">Red Honda Accord (used)</p></div>
-        </div>
-      </div>
+    <div>
+      {/* Rest of the showcase content */}
       <div className="second-main-container">
         <div className="flex-container">
           <div className="second-main-title">
@@ -223,6 +271,7 @@ const Showcase = () => {
           </div>
         </div>
       </div>
+      <Slider nfts={nfts} />
     </div>
   );
 };
